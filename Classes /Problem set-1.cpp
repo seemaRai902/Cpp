@@ -106,41 +106,43 @@ using namespace std;
 
 class person {
     public:
-        // Constructor to initialize name and age
         person(string name, int age) {
             this->name = name;
             this->age = age;
         }
 
-        // Getter for name
         string getName() {
             return name;
         }
 
-        // Getter for age
         int getAge() {
             return age;
         }
 
-        // Method to print person information
         void print_info() {
             cout << "I am a person with name " << name << " and age " << age << endl;
         }
 
     private:
-        // Private attributes to enforce encapsulation
         string name;
         int age;
 };
 
 int main() {
-    // Creating two person objects
     person p1("Seema", 22);
     person p2("Neema", 19);
 
-    // Calling print_info() to print details
     p1.print_info();
     p2.print_info();
+
+    // Attempting to access private members directly (will cause compile errors)
+    // Uncommenting the lines below will lead to errors
+    /*
+    cout << "Name of p1: " << p1.name << endl;  // Error: 'name' is private
+    cout << "Age of p1: " << p1.age << endl;    // Error: 'age' is private
+    cout << "Name of p2: " << p2.name << endl;  // Error: 'name' is private
+    cout << "Age of p2: " << p2.age << endl;    // Error: 'age' is private
+    */
 
     return 0;
 }
