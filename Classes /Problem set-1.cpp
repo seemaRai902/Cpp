@@ -1,7 +1,9 @@
 
-// Problems:
+----------------------------------------------------------------------------------------------------------------------
+    problems:
+----------------------------------------------------------------------------------------------------------------------
+p1. Define a Person class like we did in the previous module. Only add name and age.
 
-// P1. Define a Person class like we did in the previous module. Only add name and age.
 #include <string>
 #include <iostream>
 
@@ -31,7 +33,6 @@ class person {
         }
 
     private:
-        // Private attributes
         string name;
         int age;
 };
@@ -44,14 +45,16 @@ int main() {
     cout << "Name: " << p1.getName() << endl;
     cout << "Age: " << p1.getAge() << endl;
 
-    // Print person's info
+    print person's info
     p1.print_info();
 
     return 0;
 }
 
 
-// P2. Create two instances of Person and call print_info() on them.
+----------------------------------------------------------------------------------------------------------------------
+p2. Create two instances of Person and call print_info() on them.
+
 #include <string>
 #include <iostream>
 
@@ -81,7 +84,7 @@ class person {
         }
 
     private:
-        // Private attributes to enforce encapsulation
+         private attributes to enforce encapsulation
         string name;
         int age;
 };
@@ -98,7 +101,9 @@ int main() {
     return 0;
 }
 
-// P3. Make the attributes private and see if you can still access them from outside the class.
+----------------------------------------------------------------------------------------------------------------------
+p3. Make the attributes private and see if you can still access them from outside the class.
+
 #include <string>
 #include <iostream>
 
@@ -147,8 +152,10 @@ int main() {
     return 0;
 }
 
-// P4. Add a class called Student that inherits from Person. Add a field called department. Add a constructor that takes a name, age and department. Add a method called print_info() that prints out the name, age and department of the student.
-// P5. Create an instance of Student and call print_info() on it.
+----------------------------------------------------------------------------------------------------------------------
+p4. Add a class called Student that inherits from Person. Add a field called department. Add a constructor that takes a 
+    name, age and department. Add a method called print_info() that prints out the name, age and department of the student.
+p5. Create an instance of Student and call print_info() on it.
 
 #include <string>
 #include <iostream>
@@ -212,6 +219,60 @@ int main() {
 }
 
 
-// P6. Create a class called Teacher that inherits from Person. Add a field called salary. Add a constructor that takes a name, age and salary. Add a method called print_info() that prints out the name, age and salary of the teacher.
+----------------------------------------------------------------------------------------------------------------------
+p6. Create a class called Teacher that inherits from Person. Add a field called salary. Add a constructor that takes 
+   a name, age and salary. Add a method called print_info() that prints out the name, age and salary of the teacher.
+p7. Create an instance of Teacher and call print_info() on it.
 
-// P7. Create an instance of Teacher and call print_info() on it.
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+class Person {
+    public:
+        Person(string name, int age) {
+            this->name = name;
+            this->age = age;
+        }
+
+        string getName() {
+            return name;
+        }
+
+        int getAge() {
+            return age;
+        }
+
+        void print_info() {
+            cout << "I am a person with name " << name << " and age " << age << endl;
+        }
+
+    protected:
+        string name;
+        int age;
+};
+
+class Teacher : public Person {
+    public:
+        Teacher(string name, int age, double salary) : Person(name, age) {
+            this->salary = salary;
+        }
+
+        void print_info() {
+            cout << "I am a teacher with name " << name << ", age " << age << ", and salary " << salary << endl;
+        }
+
+    private:
+        double salary;
+};
+
+int main() {
+
+    Teacher t1("John", 30, 50000.00);
+    t1.print_info();
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------
