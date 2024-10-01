@@ -1,2 +1,3 @@
 # Cpp
-##By Seema J Rai
+Cpp assignment questions and solutions.
+By Seema J Rai
